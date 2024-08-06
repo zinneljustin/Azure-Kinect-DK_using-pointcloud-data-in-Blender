@@ -15,7 +15,7 @@ Pointcloud Data from Azure Kinect DK to Blender
  # Creating frames
 
 	# 1. Azure Kinect has to record with the Azure-Kinect-Recorder (k4arecorder.exe) 
-	#	to get an matroska.file (the depht video must be coded to b16g)
+	#	to get a matroska.file (the depht video must be coded to b16g)
 
 	# 2. Export the rgb_video and the depth_video from matroska.file via MVKToolNix
 
