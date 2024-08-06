@@ -10,7 +10,7 @@ Pointcloud Data from Azure Kinect DK to Blender
 	# Blender
 	# bash
 	# ffmpeg
-	# AzureKinect SDK + Viewer und Recorder
+	# AzureKinect SDK + Viewer + Recorder
  
  # Creating frames
 
