@@ -11,29 +11,29 @@ Pointcloud Data from Azure Kinect DK to Blender
 	# bash
 	# ffmpeg
 	# AzureKinect SDK + Viewer und Recorder
+ 
  # Workflow
 
-	# 1. Azure Kinect has to record with the Azure Kinect recorder to get an matroska file (the depth frames must be b16g coded to work)
+	# 1. Azure Kinect has to record with the Azure-Kinect-Recorder (k4arecorder.exe) to get an matroska.file (the depht video must be coded to b16g)
+
+	# 2. Export the rgb_video and the depth_video from matroska.file via MVKToolNix
+
+	# 3. Convert each video to frames with bash and ffmpeg (depth frames need to be in grayscale b16g)
 	
-	# 2. export Matroska file via MVKToolNix to a rgb_video and a depth_video
 	
-	# 3. export the frames from each video with bash (here you need ffmpeg)
-	
-	
-	# 3.1 Extract RGB Frames in Bash
+		# 3.1 Extract RGB Frames in Bash
 	
 		ffmpeg -i rgb_video.mp4 -vsync 0 rgb_frames/frame_%04d.png
 	
-	# 3.2 Extract depth Frames in Bash
+		# 3.2 Extract depth Frames in Bash
 	
 		ffmpeg -i depth_video.mp4 -vsync 0 depth_frames/frame_%04d.png
 	
-	 # Note: the files can also be .mkv files
+	 # Note: the video-files can also be .mkv 
 	
 	
 	
-	# 4. python script that creates .ply from depth- and rgb-frames
-	
+	# 4. Run this script in Python to create a .ply for every frame
 	
 		import os
 		import numpy as np
@@ -113,11 +113,12 @@ Pointcloud Data from Azure Kinect DK to Blender
 		
 		process_frames(rgb_folder, depth_folder, output_folder)
 	 
-	# Note: you only have to define the paths under Example usage
+		# Note: you only have to define the paths under Example usage
+
+ 
+	# 5. Create a new Collection in Blender and import every .ply into it
 	
-	# 5. import all the .ply to blender in one Collection
-	
-	# 6. run this script in blender to keyframe each file to its corresponding frame in the timeline
+	# 6. Run this script in Blender to create a key-frame-animation that enables every .ply-frame at the corresponding Blender-Timeline-frame (for Viewport and Render)
 		
 		import bpy
 		
@@ -159,7 +160,8 @@ Pointcloud Data from Azure Kinect DK to Blender
 	# 7. done
 	
 # Note
-	# 	I tried to export this as an alembic file, which works but still treats the whole file as one Collectionmm
-	#       If you want to asign a material to a whole collection you first need toi create it for every single .ply in the collection (same for geonode material)
-	#       Maybe there is a fix with a plugin I don't know yet, so pls hit me up If you have any ideas
+	# 	I tried to export this as an alembic file, which works but still treats the whole file as one Collection (at least in Blender)
+ 	#	Make sure that you have the same amount of Depth- and RGB-frames, else the point-color will be off
+	#       If you want to asign a material to a whole collection you first need to create it for every single .ply in the collection (same for Geo-node material)
+	#       Maybe there is a fix with a plugin I don't know yet, so pls hit me up If you have any ideas :)
 	#       I created this workflow with ChatGPT, because I don't have any coding knowledge- There deffinetly is a better way of doing this, so If you have one pls share it
