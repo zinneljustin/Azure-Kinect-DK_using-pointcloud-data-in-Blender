@@ -14,7 +14,8 @@ Pointcloud Data from Azure Kinect DK to Blender
  
  # Workflow
 
-	# 1. Azure Kinect has to record with the Azure-Kinect-Recorder (k4arecorder.exe) to get an matroska.file (the depht video must be coded to b16g)
+	# 1. Azure Kinect has to record with the Azure-Kinect-Recorder (k4arecorder.exe) 
+	#	to get an matroska.file (the depht video must be coded to b16g)
 
 	# 2. Export the rgb_video and the depth_video from matroska.file via MVKToolNix
 
@@ -118,7 +119,8 @@ Pointcloud Data from Azure Kinect DK to Blender
  
 	# 5. Create a new Collection in Blender and import every .ply into it
 	
-	# 6. Run this script in Blender to create a key-frame-animation that enables every .ply-frame at the corresponding Blender-Timeline-frame (for Viewport and Render)
+	# 6. Run this script in Blender to create a key-frame-animation that enables every .ply-frame 
+	#	at the corresponding Blender-Timeline-frame (for Viewport and Render)
 		
 		import bpy
 		
@@ -160,8 +162,15 @@ Pointcloud Data from Azure Kinect DK to Blender
 	# 7. done
 	
 # Note
-	# 	I tried to export this as an alembic file, which works but still treats the whole file as one Collection (at least in Blender)
+	# 	I tried to export this as an alembic file, which works but still treats 
+	#		the whole file as one Collection (at least in Blender)
+ 
  	#	Make sure that you have the same amount of Depth- and RGB-frames, else the point-color will be off
-	#       If you want to asign a material to a whole collection you first need to create it for every single .ply in the collection (same for Geo-node material)
+  
+	#       If you want to asign a material to a whole collection you first need to create it for every single .ply 
+	#		in the collection (same for Geo-node material)
+ 
 	#       Maybe there is a fix with a plugin I don't know yet, so pls hit me up If you have any ideas :)
-	#       I created this workflow with ChatGPT, because I don't have any coding knowledge- There deffinetly is a better way of doing this, so If you have one pls share it
+ 
+	#       I created this workflow with ChatGPT, because I don't have any coding knowledge- There deffinetly is a 
+	#		better way of doing this, so If you have one pls share it
