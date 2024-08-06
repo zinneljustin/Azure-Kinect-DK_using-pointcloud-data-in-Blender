@@ -12,7 +12,7 @@ Pointcloud Data from Azure Kinect DK to Blender
 	# ffmpeg
 	# AzureKinect SDK + Viewer und Recorder
  
- # Workflow
+ # Creating frames
 
 	# 1. Azure Kinect has to record with the Azure-Kinect-Recorder (k4arecorder.exe) 
 	#	to get an matroska.file (the depht video must be coded to b16g)
@@ -32,7 +32,7 @@ Pointcloud Data from Azure Kinect DK to Blender
 	
 	 # Note: the video-files can also be .mkv 
 	
-	
+# Creating pointcloud	
 	
 	# 4. Run this script in Python to create a .ply for every frame
 	
@@ -116,7 +116,7 @@ Pointcloud Data from Azure Kinect DK to Blender
 	 
 		# Note: you only have to define the paths under Example usage
 
- 
+ # to Blender
 	# 5. Create a new Collection in Blender and import every .ply into it
 	
 	# 6. Run this script in Blender to create a key-frame-animation that enables every .ply-frame 
@@ -161,7 +161,7 @@ Pointcloud Data from Azure Kinect DK to Blender
 	
 	# 7. done
 	
-# Note
+# Notes
 	# 	I tried to export this as an alembic file, which works but still treats 
 	#		the whole file as one Collection (at least in Blender)
  
