@@ -162,15 +162,14 @@ Pointcloud Data from Azure Kinect DK to Blender
 	# 7. done
 	
 # Notes
-	# 	I tried to export this as an alembic file, which works but still treats 
-	#		the whole file as one Collection (at least in Blender)
+	# 	I tried to export this as an alembic file, which works, but Blender still treats 
+	#		the whole file as one Collection.
  
  	#	Make sure that you have the same amount of Depth- and RGB-frames, else the point-color will be off
   
 	#       If you want to asign a material to a whole collection you first need to create it for every single .ply 
-	#		in the collection (same for Geo-node material)
- 
-	#       Maybe there is a fix with a plugin I don't know yet, so pls hit me up If you have any ideas :)
+	#		in the collection (same for Geo-node material). Maybe there is a plugin in that alows to
+	#		asign materials in badges.
  
 	#       I created this workflow with ChatGPT, because I don't have any coding knowledge- There deffinetly is a 
-	#		better way of doing this, so If you have one pls share it
+	#		better way of doing this, so If you have one pls share it!
